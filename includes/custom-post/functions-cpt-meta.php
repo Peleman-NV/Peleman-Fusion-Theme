@@ -1085,6 +1085,14 @@
 				echo '<div class="productoptions" style="border: 1px solid #ccc; background: white; padding: 10px; padding-top: 15px; border-top: none;">';
 					echo '<h4 class="pf-h4-admin">Advantage blocks</h4>';
 					echo '<hr class="horizontal-divider">';
+
+					echo '<label for="organisation_advantage_1_order" class="pf-label-admin">Order of Advantage 1</label>';
+					$organisation_advantage_1_order = get_post_meta( $post->ID, '_organisation_advantage_1_order', true );
+					$select_organisation_advantage_1_order = '<select id="organisation_advantage_1_order" name="organisation_advantage_1_order" class="pf-input-admin">';
+						$select_organisation_advantage_1_order .= '<option value="content-first"' . selected( $organisation_advantage_1_order, 'content-first', false) . '>Content first, image second</option>';
+						$select_organisation_advantage_1_order .= '<option value="image-first"' . selected( $organisation_advantage_1_order, 'image-first', false) . '>Image first, content second</option>';
+					$select_organisation_advantage_1_order .= '</select>';
+					echo $select_organisation_advantage_1_order;
 					
 					echo '<label for="organisation_advantage_1_text_left" class="pf-label-admin">Advantage 1 - Text Left</label>';
 					// echo '<textarea id="organisation_advantage_1_text_left" name="organisation_advantage_1_text_left" class="pf-input-admin" rows="4" cols="50" placeholder="Advantage 1 - Text Left">' . esc_attr( get_post_meta( $post->ID, '_organisation_advantage_1_text_left', true ) ) . '</textarea>';

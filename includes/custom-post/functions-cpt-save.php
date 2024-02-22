@@ -144,6 +144,7 @@
 				$organisation_products_button_label = get_post_meta( $default_organisation_id, '_organisation_products_button_label', true );
 
 				// Advantage blocks
+				$organisation_advantage_1_order = get_post_meta( $default_organisation_id, '_organisation_advantage_1_order', true );
 				$organisation_advantage_1_text_left = get_post_meta( $default_organisation_id, '_organisation_advantage_1_text_left', true );
 				$organisation_advantage_1_image_right = get_post_meta( $default_organisation_id, '_organisation_advantage_1_image_right', true );
 				$organisation_advantage_2_image_left = get_post_meta( $default_organisation_id, '_organisation_advantage_2_image_left', true );
@@ -247,6 +248,7 @@
 				$organisation_products_button_label = sanitize_text_field( $_POST['organisation_products_button_label'] );
 				
 				// Advantage blocks
+				$organisation_advantage_1_order = $_POST['organisation_advantage_1_order'];
 				$organisation_advantage_1_text_left = $_POST['organisation_advantage_1_text_left'];
 				$organisation_advantage_1_image_right = sanitize_text_field( $_POST['organisation_advantage_1_image_right'] );
 				$organisation_advantage_2_image_left = sanitize_text_field( $_POST['organisation_advantage_2_image_left'] );
@@ -392,6 +394,7 @@
 			update_post_meta( $post_id, '_organisation_products_button_label', $organisation_products_button_label );
 
 			// Advantage blocks
+			update_post_meta( $post_id, '_organisation_advantage_1_order', $organisation_advantage_1_order );
 			update_post_meta( $post_id, '_organisation_advantage_1_text_left', $organisation_advantage_1_text_left );
 			update_post_meta( $post_id, '_organisation_advantage_1_image_right', $organisation_advantage_1_image_right );
 			update_post_meta( $post_id, '_organisation_advantage_2_image_left', $organisation_advantage_2_image_left );

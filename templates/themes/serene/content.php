@@ -1,7 +1,7 @@
 <div class="container mobile-p-0">
 	
 	<?php if(empty(get_post_meta( $organisation_id, '_organisation_jumbotron_block1_visibility', true )) OR (get_post_meta( $organisation_id, '_organisation_jumbotron_block1_visibility', true ) == 'show')): ?>
-	<div class="p-5 mb-4 rounded" style="min-height: <?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block1_minheight', true ) . 'px'; ?>; background-color: <?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block1_bgcolor', true ); ?> !important; background: url('<?php echo wp_get_attachment_image_url( get_post_meta( $organisation_id, '_organisation_jumbotron_block1_bgimage', true ), 'full' ); ?>'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+	<div class="p-5 mb-3 rounded" style="min-height: <?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block1_minheight', true ) . 'px'; ?>; background-color: <?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block1_bgcolor', true ); ?> !important; background: url('<?php echo wp_get_attachment_image_url( get_post_meta( $organisation_id, '_organisation_jumbotron_block1_bgimage', true ), 'full' ); ?>'); background-repeat: no-repeat; background-size: cover; background-position: center;">
 		<div class="container-fluid py-3">
 			<div class="row">
 				<div class="col-md-6">
@@ -16,13 +16,13 @@
 	</div>
 	<?php endif; ?>
 
-	<div class="row align-items-md-stretch mb-5">
-		<div class="col-md-6 jumbotron-left">
+	<div class="row align-items-md-stretch mb-4" style="min-height: <?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block23_minheight', true ) . 'px'; ?>;">
+		<div class="col-md-6 jumbotron-left" style="margin-bottom: 20px;">
 			<div class="h-100 p-5 rounded" style="background-color: <?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block2_bgcolor', true ); ?> !important; background: url('<?php echo wp_get_attachment_image_url( get_post_meta( $organisation_id, '_organisation_jumbotron_block2_bgimage', true ), 'full' ); ?>'); background-repeat: no-repeat; background-size: cover; background-position: center;">
 				<span style="color: <?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block2_text_color', true ); ?> !important;"><?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block2_text', true ); ?></span>
 			</div>
 		</div>
-		<div class="col-md-6 jumbotron-right">
+		<div class="col-md-6 jumbotron-right" style="margin-bottom: 20px;">
 			<div class="h-100 p-5 rounded" style="background-color: <?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block3_bgcolor', true ); ?> !important; background: url('<?php echo wp_get_attachment_image_url( get_post_meta( $organisation_id, '_organisation_jumbotron_block3_bgimage', true ), 'full' ); ?>'); background-repeat: no-repeat; background-size: cover; background-position: center;">
 				<span style="color: <?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block3_text_color', true ); ?> !important;"><?php echo get_post_meta( $organisation_id, '_organisation_jumbotron_block3_text', true ); ?></span>
 			</div>
@@ -130,9 +130,14 @@
 	<div class="row g-5">
 		<div class="col-md-8">
 			<?php if(!empty(get_post_meta( $organisation_id, '_organisation_advantage_1_text_left', true )) AND !empty(get_post_meta( $organisation_id, '_organisation_advantage_1_image_right', true ))): ?>
-				<article class="">
-					<?php echo (get_post_meta( $organisation_id, '_organisation_advantage_1_text_left', true )); ?>
-					<img class="mt-3 rounded" src="<?php echo wp_get_attachment_image_url( get_post_meta( $organisation_id, '_organisation_advantage_1_image_right', true ), 'full' ); ?>" style="width: 100%; margin-top: 10px; margin-bottom: 10px;" >
+				<article class="mb-5">
+					<?php if(get_post_meta( $organisation_id, '_organisation_advantage_1_order', true ) == 'image-first'): ?>
+						<img class="rounded" src="<?php echo wp_get_attachment_image_url( get_post_meta( $organisation_id, '_organisation_advantage_1_image_right', true ), 'full' ); ?>" style="width: 100%; margin-top: 10px; margin-bottom: 10px;" >
+						<?php echo (get_post_meta( $organisation_id, '_organisation_advantage_1_text_left', true )); ?>
+					<?php else: ?>
+						<?php echo (get_post_meta( $organisation_id, '_organisation_advantage_1_text_left', true )); ?>
+						<img class="rounded" src="<?php echo wp_get_attachment_image_url( get_post_meta( $organisation_id, '_organisation_advantage_1_image_right', true ), 'full' ); ?>" style="width: 100%; margin-top: 10px; margin-bottom: 10px;" >
+					<?php endif; ?>
 				</article>
 			<?php endif; ?>
 			

@@ -146,8 +146,14 @@
 	}
 
 	function dw_dashboard_widget_help_handler2() {
-		echo '<h3 style="font-weight: 500; margin-top: 20px; margin-bottom: 5px;">'.__( 'Changelog', 'peleman-fusion' ).'</h3>';
+		echo '<h3 style="font-weight: 500; margin-top: 20px; margin-bottom: 10px;">'.__( 'Changelog', 'peleman-fusion' ).' - '.wp_get_theme()->get( 'Version' ).'</h3>';
 		
+		echo '<h4 style="font-weight: 500; margin-top: 5px; margin-bottom: 0px; font-size: 13px;">22/02/2024 – 1.3.2</h4>';
+		echo '<ul style="list-style: square; margin-left: 20px; margin-top: 5px;">';
+			echo '<li>'.__('Responsive design improved', 'peleman-fusion-changelog').'</li>';
+			echo '<li>'.__('Added more options for customizing your landing page', 'peleman-fusion-changelog').'</li>';
+		echo '</ul>';
+
 		echo '<h4 style="font-weight: 500; margin-top: 5px; margin-bottom: 0px; font-size: 13px;">15/11/2023 – 1.2.0</h4>';
 		echo '<ul style="list-style: square; margin-left: 20px; margin-top: 5px;">';
 			echo '<li>'.__('Added more options for styling your landing page', 'peleman-fusion-changelog').'</li>';
